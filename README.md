@@ -1,4 +1,4 @@
-# mentor-card_common
+# mentor_card-common
 
 ## Project setup
 ```

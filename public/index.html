@@ -1,17 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+    <title>Mentor Card Portal</title>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@MentorCard" />
+    <meta property="og:url" content="https://card.lit-kansai-mentors.com/" />
+    <meta property="og:title" content="Mentor Card Portal" />
+    <meta property="og:description" content="Kansai Mentor Card Portal Site" />
+    <meta
+      property="og:image"
+      content="https://card.lit-kansai-mentors.com/ogp.png"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="fb:app_id" content="851553675278328" />
+    <meta name="apple-mobile-web-app-title" content="Mentor Card" />
   </head>
   <body>
     <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      <strong
+        >Mentor Card
+        PortalではJavaScriptを使用しています。JavaScriptを有効にしてから再度アクセスしてください。</strong
+      >
     </noscript>
     <div id="app"></div>
-    <!-- built files will be auto injected -->
   </body>
 </html>
