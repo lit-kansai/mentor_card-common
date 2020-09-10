@@ -1,7 +1,11 @@
 <template>
   <div class="mentor-modal-box">
     <div class="modal shadow">
-      <CloseButton @click.native="onClose" :variant="variant" v-if="!noclose" />
+      <CloseButton
+        @click.native="onClose"
+        :variant="getVariant"
+        v-if="!isNoClose"
+      />
       <slot name="fixed"></slot>
       <div
         :class="`modal-body`"
@@ -29,6 +33,14 @@ export default class Modal extends Vue {
   noclose?: boolean;
 
   y = 0;
+
+  get getVariant() {
+    return this.variant;
+  }
+
+  get isNoClose() {
+    return this.noclose;
+  }
 
   mounted() {
     const md = new MobileDetect(window.navigator.userAgent);

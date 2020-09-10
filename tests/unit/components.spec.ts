@@ -1,6 +1,7 @@
 import Answer from '@/components/parts/Answer.vue';
 import CloseButton from '@/components/parts/CloseButton.vue';
 import CourseIcon from '@/components/parts/CourseIcon.vue';
+import Courses from '@/components/parts/Courses.vue';
 import CourseSnsHeader from '@/components/parts/CourseSnsHeader.vue';
 import MentorName from '@/components/parts/MentorName.vue';
 import Nounai from '@/components/parts/Nounai.vue';
@@ -38,7 +39,9 @@ describe('Answer.vue', () => {
     const wrapper = shallowMount(Answer, {
       propsData: { body }
     });
-    expect(wrapper.text()).toMatch(body);
+    wrapper.vm.$nextTick(() => {
+      expect(wrapper.text()).toMatch(body);
+    });
   });
 });
 
@@ -60,13 +63,25 @@ describe('CloseButton.vue', () => {
   });
 });
 
+describe('Courses.vue', () => {
+  it('複数表示', () => {
+    const courses = ['webs', 'android'];
+    const wrapper = shallowMount(Courses, {
+      propsData: { courses }
+    });
+    wrapper.findAll('img').wrappers.forEach((w, i) => {
+      expect(w.attributes().src).toMatch(`/icon/${courses[i]}.png`);
+    });
+  });
+});
+
 describe('CourseIcon.vue', () => {
   it('アイコンパス', () => {
     const course = 'webs';
     const wrapper = shallowMount(CourseIcon, {
       propsData: { course }
     });
-    expect(wrapper.find('img').attributes().src).toMatch('/icon/webs.png');
+    expect(wrapper.find('img').attributes().src).toMatch(`/icon/${course}.png`);
   });
 });
 

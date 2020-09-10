@@ -1,10 +1,15 @@
 <template>
-  <div class="answer">{{ body }}</div>
+  <div class="answer">{{ getAnswer }}</div>
 </template>
 
 <script>
 export default {
-  props: ['body']
+  props: ['body'],
+  computed: {
+    getAnswer() {
+      return this.body;
+    }
+  }
 };
 </script>
 

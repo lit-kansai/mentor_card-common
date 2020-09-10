@@ -1,11 +1,11 @@
 <template>
   <div class="mentor-info">
-    <MentorName :name="mentor.name" />
-    <Courses :courses="mentor.courses" />
-    <Sns :sns="mentor" />
-    <Nounai :slackUid="mentor.slackUid" />
-    <Prefecture :pref="mentor.prefecture" :city="mentor.city" />
-    <div v-for="(p, i) in mentor.profile" :key="p.title + i">
+    <MentorName :name="getMentor.name" />
+    <Courses :courses="getMentor.courses" />
+    <Sns :sns="getMentor" />
+    <Nounai :slackUid="getMentor.slackUid" />
+    <Prefecture :pref="getMentor.prefecture" :city="getMentor.city" />
+    <div v-for="(p, i) in getMentor.profile" :key="p.title + i">
       <QueHeader :text="p.title" />
       <Answer :body="p.body" />
     </div>
@@ -41,6 +41,10 @@ import { Mentor } from '@/models/mentor';
 export default class MentorInfo extends Vue {
   @Prop()
   mentor?: Mentor | null;
+
+  get getMentor() {
+    return this.mentor;
+  }
 }
 </script>
 

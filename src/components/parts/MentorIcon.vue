@@ -3,28 +3,27 @@
     <div
       class="icon-box-y"
       :style="{
-        'background-color': getColor(),
-        'background-image': `url(https://storage.googleapis.com/mentor-card-production.appspot.com/card/${slackUid}/icon)`
+        'background-color': getColor,
+        'background-image': `url(https://storage.googleapis.com/mentor-card-production.appspot.com/card/${getUid}/icon)`
       }"
     ></div>
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import { getCardColor } from '@/main';
-import { Component, Vue, Prop } from 'vue-property-decorator';
 
-@Component
-export default class MentorIcon extends Vue {
-  @Prop()
-  variant?: string;
-  @Prop()
-  slackUid?: string;
-
-  getColor() {
-    return getCardColor(this.variant);
+export default {
+  props: ['variant', 'slackUid'],
+  computed: {
+    getColor() {
+      return getCardColor(`${this.variant}`);
+    },
+    getUid() {
+      return this.slackUid;
+    }
   }
-}
+};
 </script>
 
 <style scoped>

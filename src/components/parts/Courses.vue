@@ -1,8 +1,8 @@
 <template>
-  <div class="courses" v-if="courses.length > 0">
+  <div class="courses" v-if="getCourses.length > 0">
     <CourseSnsHeader>-Course-</CourseSnsHeader>
     <div class="flex">
-      <CourseIcon v-for="c in courses" :course="c" :key="c" />
+      <CourseIcon v-for="c in getCourses" :course="c" :key="c" />
     </div>
   </div>
 </template>
@@ -13,7 +13,12 @@ import CourseIcon from '@/components/parts/CourseIcon.vue';
 
 export default {
   props: ['courses'],
-  components: { CourseSnsHeader, CourseIcon }
+  components: { CourseSnsHeader, CourseIcon },
+  computed: {
+    getCourses() {
+      return this.courses;
+    }
+  }
 };
 </script>
 

@@ -56,6 +56,7 @@
     "build": "run-s build:vue build:type",
     "build:type": "tsc --emitDeclarationOnly --declaration -P tsconfig.types.json",
     "build:vue": "vue-cli-service build --target lib --name mentor_card-common ./src/main.ts",
+    "build:sample": "vue-cli-service build ./src/main-test.ts",
     "lint": "vue-cli-service lint",
     "serve": "vue-cli-service serve ./src/main-test.ts",
     "test": "vue-cli-service test:unit"

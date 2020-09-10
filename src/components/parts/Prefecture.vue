@@ -1,8 +1,8 @@
 <template>
-  <div class="area" v-if="isExists(pref)">
+  <div class="area" v-if="isExists">
     <QueHeader text="出身" />
-    <img :src="`/pref/${pref}.svg`" />
-    <div class="text">{{ getPrefName(pref) }} {{ city }}</div>
+    <img :src="`/pref/${getPref}.svg`" />
+    <div class="text">{{ getPrefName }} {{ city }}</div>
   </div>
 </template>
 
@@ -62,12 +62,18 @@ import QueHeader from '@/components/parts/QueHeader.vue';
 export default {
   props: ['pref', 'city'],
   components: { QueHeader },
-  methods: {
-    isExists(p) {
-      return pref[p] != undefined;
+  computed: {
+    isExists() {
+      return pref[this.pref] != undefined;
     },
-    getPrefName(p) {
-      return pref[p];
+    getPrefName() {
+      return pref[this.pref];
+    },
+    getPref() {
+      return this.pref;
+    },
+    getCity() {
+      return this.city;
     }
   }
 };

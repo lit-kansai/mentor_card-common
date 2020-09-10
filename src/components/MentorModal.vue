@@ -1,20 +1,20 @@
 <template>
   <transition name="fade">
     <DecoratedModal
-      v-if="mentor"
-      :variant="mentor.color"
+      v-if="getMentor"
+      :variant="getMentor.color"
       @close="onClose"
       @scroll="onScroll"
       class="mentor-modal"
     >
       <template v-slot:fixed>
         <MentorIcon
-          :slackUid="mentor.slackUid"
-          :variant="mentor.color"
+          :slackUid="getMentor.slackUid"
+          :variant="getMentor.color"
           ref="icon"
         />
       </template>
-      <MentorInfo :mentor="mentor" class="mentor-info" />
+      <MentorInfo :mentor="getMentor" class="mentor-info" />
     </DecoratedModal>
   </transition>
 </template>
@@ -36,6 +36,10 @@ import { Mentor } from '@/models/mentor';
 export default class MentorModal extends Vue {
   @Prop()
   mentor?: Mentor | null;
+
+  get getMentor() {
+    return this.mentor;
+  }
 
   onScroll(e: Event) {
     const icon = (this.$refs.icon as Vue).$el as HTMLDivElement;

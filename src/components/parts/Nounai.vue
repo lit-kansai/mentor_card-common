@@ -10,21 +10,28 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import QueHeader from '@/components/parts/QueHeader.vue';
-import { Component, Vue, Prop } from 'vue-property-decorator';
 
-@Component({ components: { QueHeader } })
-export default class MentorModal extends Vue {
-  @Prop()
-  slackUid?: string | null;
-
-  loaded = false;
-
-  onLoaded() {
-    this.loaded = true;
+export default {
+  props: ['slackUid'],
+  components: { QueHeader },
+  data: function() {
+    return {
+      loaded: false
+    };
+  },
+  computed: {
+    getUid() {
+      return this.slackUid;
+    }
+  },
+  methods: {
+    onLoaded() {
+      this.loaded = true;
+    }
   }
-}
+};
 </script>
 
 <style scoped>

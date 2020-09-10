@@ -1,12 +1,17 @@
 <template>
   <div class="course_icon">
-    <img :src="`/icon/${course}.png`" />
+    <img :src="`/icon/${getCourse}.png`" />
   </div>
 </template>
 
 <script>
 export default {
-  props: ['course']
+  props: ['course'],
+  computed: {
+    getCourse() {
+      return this.course;
+    }
+  }
 };
 </script>
 

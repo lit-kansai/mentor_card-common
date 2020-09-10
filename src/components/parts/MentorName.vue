@@ -1,10 +1,15 @@
 <template>
-  <div class="name">{{ name }}</div>
+  <div class="name">{{ getName }}</div>
 </template>
 
 <script>
 export default {
-  props: ['name']
+  props: ['name'],
+  computed: {
+    getName() {
+      return this.name;
+    }
+  }
 };
 </script>
 

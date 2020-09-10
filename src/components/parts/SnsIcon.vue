@@ -1,7 +1,7 @@
 <template>
   <div class="sns">
-    <a :href="getAccountUrl(account, sns)" target="_blank">
-      <img :src="`/sns/${sns}.svg`" />
+    <a :href="getAccountUrl" target="_blank">
+      <img :src="`/sns/${getSns}.svg`" />
     </a>
   </div>
 </template>
@@ -9,17 +9,20 @@
 <script>
 export default {
   props: ['sns', 'account'],
-  methods: {
-    getAccountUrl(account, sns) {
-      switch (sns) {
+  computed: {
+    getAccountUrl() {
+      switch (this.sns) {
         case 'facebook':
-          return account;
+          return this.account;
         case 'twitter':
-          return `https://twitter.com/${account.replace(/@/, '')}`;
+          return `https://twitter.com/${this.account.replace(/@/, '')}`;
         case 'instagram':
-          return `https://instagram.com/${account.replace(/@/, '')}`;
+          return `https://instagram.com/${this.account.replace(/@/, '')}`;
       }
       return '';
+    },
+    getSns() {
+      return this.sns;
     }
   }
 };

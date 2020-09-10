@@ -1,10 +1,15 @@
 <template>
-  <div class="que">{{ text }}</div>
+  <div class="que">{{ getText }}</div>
 </template>
 
 <script>
 export default {
-  props: ['text']
+  props: ['text'],
+  computed: {
+    getText() {
+      return this.text;
+    }
+  }
 };
 </script>
 

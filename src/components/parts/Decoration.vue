@@ -3,10 +3,10 @@
     <img
       :src="`/decoration/${name[(r + i) % name.length]}.svg`"
       class="deco"
-      v-for="(_, i) in new Array(count)"
+      v-for="(_, i) in new Array(c)"
       :key="i"
       :style="
-        `top: ${offset + i * size}px; animation: ${getAnimation(
+        `top: ${o + i * s}px; animation: ${getAnimation(
           i,
           name[(r + i) % name.length]
         )} ${50 + Math.floor(Math.random() * 30)}s linear 0s infinite;`
@@ -16,12 +16,16 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from 'vue-property-decorator';
+import { Component, Vue, Prop, Watch } from 'vue-property-decorator';
 
 @Component
 export default class Decoration extends Vue {
   name = ['line1', 'line2', 'circle'];
   r = Math.floor(Math.random() * this.name.length);
+
+  c = 0;
+  o = 0;
+  s = 0;
 
   @Prop({ default: 0 })
   count?: number;
@@ -29,6 +33,21 @@ export default class Decoration extends Vue {
   offset?: number;
   @Prop({ default: 0 })
   size?: number;
+
+  @Watch('count')
+  watchCount(count: number) {
+    this.c = count;
+  }
+
+  @Watch('offset')
+  watchOffset(offset: number) {
+    this.o = offset;
+  }
+
+  @Watch('size')
+  watchSize(size: number) {
+    this.s = size;
+  }
 
   getAnimation(i: number, name: string) {
     if (name == 'circle') return Math.random() > 0.5 ? 'rotateR' : 'rotateL';
