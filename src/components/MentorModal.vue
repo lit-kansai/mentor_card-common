@@ -12,6 +12,7 @@
           :uid="getMentor.slackUid || getMentor.id"
           :variant="getMentor.color"
           ref="icon"
+          class="icon"
         />
       </template>
       <MentorInfo :mentor="getMentor" class="mentor-info" />
@@ -63,6 +64,9 @@ export default class MentorModal extends Vue {
 </style>
 
 <style lang="stylus" scoped>
+.icon {
+  pointer-events: none;
+}
 .mentor-info {
   margin-top: calc(40% + 64px);
 }
