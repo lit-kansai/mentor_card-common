@@ -9,7 +9,7 @@
     >
       <template v-slot:fixed>
         <MentorIcon
-          :slackUid="getMentor.slackUid"
+          :uid="getMentor.slackUid || getMentor.id"
           :variant="getMentor.color"
           ref="icon"
         />

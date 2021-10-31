@@ -14,13 +14,13 @@
 import { getCardColor } from '@/main';
 
 export default {
-  props: ['variant', 'slackUid'],
+  props: ['variant', 'uid'],
   computed: {
     getColor() {
       return getCardColor(`${this.variant}`);
     },
     getUid() {
-      return this.slackUid;
+      return this.uid;
     }
   }
 };
