@@ -1,5 +1,5 @@
 <template>
-  <div class="mentor-info">
+  <div class="mc-mentor-info">
     <MentorName :name="getMentor.name" />
     <Courses :courses="getMentor.courses" />
     <Sns :sns="getMentor" />
@@ -51,7 +51,7 @@ export default class MentorInfo extends Vue {
 <style lang="stylus" scoped>
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&display=swap&subset=japanese');
 
-.mentor-info {
+.mc-mentor-info {
   padding: 32px 0px;
 }
 </style>

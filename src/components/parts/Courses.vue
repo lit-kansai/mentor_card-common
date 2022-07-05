@@ -1,7 +1,7 @@
 <template>
-  <div class="courses" v-if="getCourses.length > 0">
+  <div class="mc-courses" v-if="getCourses.length > 0">
     <CourseSnsHeader>-Course-</CourseSnsHeader>
-    <div class="flex">
+    <div class="mc-flex">
       <CourseIcon v-for="c in getCourses" :course="c" :key="c" />
     </div>
   </div>
@@ -23,7 +23,7 @@ export default {
 </script>
 
 <style scoped>
-.flex {
+.mc-flex {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;

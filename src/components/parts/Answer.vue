@@ -1,5 +1,5 @@
 <template>
-  <div class="answer">{{ getAnswer }}</div>
+  <div class="mc-answer">{{ getAnswer }}</div>
 </template>
 
 <script>
@@ -14,7 +14,7 @@ export default {
 </script>
 
 <style scoped>
-.answer {
+.mc-answer {
   font-family: 'Noto Sans JP';
   letter-spacing: 1px;
   font-size: 15px;

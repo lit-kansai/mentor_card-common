@@ -1,5 +1,5 @@
 <template>
-  <div class="sns">
+  <div class="mc-sns">
     <a :href="getAccountUrl" target="_blank">
       <img :src="`/sns/${getSns}.svg`" />
     </a>
@@ -29,7 +29,7 @@ export default {
 </script>
 
 <style scoped>
-.sns img {
+.mc-sns img {
   width: 64px;
   margin: 0 4px;
 }

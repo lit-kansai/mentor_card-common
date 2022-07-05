@@ -1,6 +1,6 @@
 <template>
-  <div class="mentor-modal-box">
-    <div class="modal shadow">
+  <div class="mc-mentor-modal-box">
+    <div class="mc-modal mc-shadow">
       <CloseButton
         @click.native="onClose"
         :variant="getVariant"
@@ -8,7 +8,7 @@
       />
       <slot name="fixed"></slot>
       <div
-        class="modal-body"
+        class="mc-modal-body"
         :style="{ 'background-color': getColor() }"
         @scroll="onScroll"
         ref="body"
@@ -53,8 +53,8 @@ export default class DecoratedModal extends Vue {
 
     if (md.is('ios')) inobounse.enable();
     this.y = window.scrollY;
-    document.documentElement.classList.add('disable-scroll');
-    document.body.classList.add('disable-scroll');
+    document.documentElement.classList.add('mc-disable-scroll');
+    document.body.classList.add('mc-disable-scroll');
     const app = document.getElementById('app');
     if (app) app.style.marginTop = `${-this.y}px`;
 
@@ -89,14 +89,14 @@ export default class DecoratedModal extends Vue {
 </script>
 
 <style>
-.disable-scroll {
+.mc-disable-scroll {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
 }
 </style>
 
 <style lang="stylus" scoped>
-.mentor-modal-box {
+.mc-mentor-modal-box {
   position: fixed;
   top: 0px;
   left: 0px;
@@ -106,7 +106,7 @@ export default class DecoratedModal extends Vue {
   z-index: 60;
 }
 
-.modal {
+.mc-modal {
   border-radius: 16px;
   position: relative;
   max-width: 600px;
@@ -119,7 +119,7 @@ export default class DecoratedModal extends Vue {
   margin-bottom: 32px;
 }
 
-.modal-body {
+.mc-modal-body {
   border: 3px solid #ffffff;
   border-radius: inherit;
   width: 100%;
@@ -134,16 +134,16 @@ export default class DecoratedModal extends Vue {
   position: relative;
   z-index: 0;
 
-  & > *:not(.decos) {
+  & > *:not(.mc-decos) {
     z-index: 10;
   }
 }
 
-.modal-body::-webkit-scrollbar {
+.mc-modal-body::-webkit-scrollbar {
   display: none;
 }
 
-.shadow {
+.mc-shadow {
   position: relative;
   transition: all 0.15s ease-in-out;
   top: 0px;
@@ -164,7 +164,7 @@ export default class DecoratedModal extends Vue {
   }
 }
 
-.close_button {
+.mc-close_button {
   position: absolute;
   top: -20px;
   left: -20px;

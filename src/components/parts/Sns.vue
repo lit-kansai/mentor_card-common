@@ -1,7 +1,10 @@
 <template>
-  <div class="sns" v-if="getSns.facebook || getSns.twitter || getSns.instagram">
+  <div
+    class="mc-sns"
+    v-if="getSns.facebook || getSns.twitter || getSns.instagram"
+  >
     <CourseSnsHeader>-SNS-</CourseSnsHeader>
-    <div class="flex">
+    <div class="mc-flex">
       <SnsIcon
         v-if="getSns.facebook"
         sns="facebook"
@@ -33,7 +36,7 @@ export default {
 </script>
 
 <style scoped>
-.flex {
+.mc-flex {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;

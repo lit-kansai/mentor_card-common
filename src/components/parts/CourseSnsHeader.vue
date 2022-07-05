@@ -1,5 +1,5 @@
 <template>
-  <div class="qsns">
+  <div class="mc-qsns">
     <slot></slot>
   </div>
 </template>
@@ -9,7 +9,7 @@ export default {};
 </script>
 
 <style scoped>
-.qsns {
+.mc-qsns {
   font-family: 'Noto Sans JP';
   letter-spacing: 2px;
   font-size: 20px;

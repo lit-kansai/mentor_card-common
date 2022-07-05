@@ -61,5 +61,6 @@
     "serve": "vue-cli-service serve ./src/main-test.ts",
     "test": "vue-cli-service test:unit"
   },
-  "typings": "./dist/types/main.d.ts"
+  "typings": "./dist/types/main.d.ts",
+  "dependencies": {}
 }

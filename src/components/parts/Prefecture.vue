@@ -1,8 +1,8 @@
 <template>
-  <div class="area" v-if="isExists">
+  <div class="mc-area" v-if="isExists">
     <QueHeader text="出身" />
     <img :src="`/pref/${getPref}.svg`" />
-    <div class="text">{{ getPrefName }} {{ city }}</div>
+    <div class="mc-text">{{ getPrefName }} {{ city }}</div>
   </div>
 </template>
 
@@ -80,16 +80,16 @@ export default {
 </script>
 
 <style scoped>
-.area {
+.mc-area {
   text-align: center;
 }
 
-.area img {
+.mc-area img {
   width: 80px;
   margin: 8px 0px;
 }
 
-.text {
+.mc-text {
   font-family: 'Noto Sans JP';
   font-size: 15px;
   color: #fff;

@@ -1,8 +1,8 @@
 <template>
-  <div class="decos">
+  <div class="mc-decos">
     <img
       :src="`/decoration/${name[(r + i) % name.length]}.svg`"
-      class="deco"
+      class="mc-deco"
       v-for="(_, i) in new Array(c)"
       :key="i"
       :style="
@@ -58,14 +58,14 @@ export default class Decoration extends Vue {
 </script>
 
 <style scoped lang="stylus">
-.decos {
+.mc-decos {
   top: 0;
   position: absolute;
   z-index: -1;
   width: 100%;
 }
 
-.deco {
+.mc-deco {
   position: absolute;
   top: 0;
   width: 70%;
@@ -81,7 +81,7 @@ export default class Decoration extends Vue {
 }
 
 @media screen and (max-width: 768px) {
-  .deco {
+  .mc-deco {
     width: 90%;
   }
 }

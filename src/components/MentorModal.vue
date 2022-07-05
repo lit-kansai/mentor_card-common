@@ -5,17 +5,17 @@
       :variant="getMentor.color"
       @close="onClose"
       @scroll="onScroll"
-      class="mentor-modal"
+      class="mc-mentor-modal"
     >
       <template v-slot:fixed>
         <MentorIcon
           :uid="getMentor.slackUid || getMentor.id"
           :variant="getMentor.color"
           ref="icon"
-          class="icon"
+          class="mc-icon"
         />
       </template>
-      <MentorInfo :mentor="getMentor" class="mentor-info" />
+      <MentorInfo :mentor="getMentor" class="mc-mentor-info" />
     </DecoratedModal>
   </transition>
 </template>
@@ -58,16 +58,16 @@ export default class MentorModal extends Vue {
 </script>
 
 <style>
-.mentor-modal .modal {
+.mc-mentor-modal .mc-modal {
   top: 14%;
 }
 </style>
 
 <style lang="stylus" scoped>
-.icon {
+.mc-icon {
   pointer-events: none;
 }
-.mentor-info {
+.mc-mentor-info {
   margin-top: calc(40% + 64px);
 }
 

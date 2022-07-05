@@ -1,5 +1,5 @@
 <template>
-  <div class="nounai" v-show="loaded" v-if="slackUid">
+  <div class="mc-nounai" v-show="loaded" v-if="slackUid">
     <QueHeader text="脳内シート" />
     <img
       :src="
@@ -35,7 +35,7 @@ export default {
 </script>
 
 <style scoped>
-.nounai img {
+.mc-nounai img {
   max-width: 350px;
   margin: 38px auto 0px;
   width: 60%;

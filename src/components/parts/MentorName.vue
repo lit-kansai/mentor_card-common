@@ -1,5 +1,5 @@
 <template>
-  <div class="name">{{ getName }}</div>
+  <div class="mc-name">{{ getName }}</div>
 </template>
 
 <script>
@@ -14,7 +14,7 @@ export default {
 </script>
 
 <style scoped>
-.name {
+.mc-name {
   border: 3px solid #fff;
   border-radius: 100px;
   text-align: center;

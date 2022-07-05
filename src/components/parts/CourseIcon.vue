@@ -1,5 +1,5 @@
 <template>
-  <div class="course_icon">
+  <div class="mc-course_icon">
     <img :src="`/icon/${getCourse}.png`" />
   </div>
 </template>
@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style scoped>
-.course_icon img {
+.mc-course_icon img {
   width: 64px;
   margin: 0 4px;
 }

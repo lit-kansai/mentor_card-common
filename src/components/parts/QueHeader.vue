@@ -1,5 +1,5 @@
 <template>
-  <div class="que">{{ getText }}</div>
+  <div class="mc-que">{{ getText }}</div>
 </template>
 
 <script>
@@ -14,7 +14,7 @@ export default {
 </script>
 
 <style scoped>
-.que {
+.mc-que {
   letter-spacing: 2px;
   padding: 4px 12px;
   border: 3px solid #fff;

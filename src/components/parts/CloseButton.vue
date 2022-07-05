@@ -1,10 +1,10 @@
 <template>
-  <div class="close_button">
+  <div class="mc-close_button">
     <div
-      class="close_button-body"
+      class="mc-close_button-body"
       :style="{ 'background-color': getColor() }"
     ></div>
-    <div class="close_button-shadow"></div>
+    <div class="mc-close_button-shadow"></div>
   </div>
 </template>
 
@@ -24,14 +24,14 @@ export default class Modal extends Vue {
 </script>
 
 <style lang="stylus" scoped>
-.close_button {
+.mc-close_button {
   width: 48px;
   height: 48px;
   border-radius: 50%;
   position: relative;
 }
 
-.close_button-body {
+.mc-close_button-body {
   cursor: pointer;
   border: 3px solid #ffffff;
   position: absolute;
@@ -45,7 +45,7 @@ export default class Modal extends Vue {
   background-image: url('/close.svg');
 }
 
-.close_button-shadow {
+.mc-close_button-shadow {
   background: url('/shadow.png');
   background-repeat: repeat;
   position: absolute;
@@ -68,13 +68,13 @@ export default class Modal extends Vue {
   }
 }
 
-.close_button:hover {
-  .close_button-body {
+.mc-close_button:hover {
+  .mc-close_button-body {
     top: -2px;
     left: -2px;
   }
 
-  .close_button-shadow {
+  .mc-close_button-shadow {
     top: 10px;
     left: 10px;
     animation: move 0.2s linear 0s infinite;
