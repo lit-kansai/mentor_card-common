@@ -1,6 +1,6 @@
 <template>
   <div class="mc-course_icon">
-    <img :src="`/icon/${getCourse}.png`" />
+    <img :src="require(`@/assets/course/${getCourse}.png`)" />
   </div>
 </template>
 

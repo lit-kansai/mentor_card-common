@@ -1,7 +1,7 @@
 <template>
   <div class="mc-area" v-if="isExists">
     <QueHeader text="出身" />
-    <img :src="`/pref/${getPref}.svg`" />
+    <img :src="require(`@/assets/pref/${getPref}.svg`)" />
     <div class="mc-text">{{ getPrefName }} {{ city }}</div>
   </div>
 </template>
