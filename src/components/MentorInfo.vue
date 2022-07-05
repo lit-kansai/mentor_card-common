@@ -54,4 +54,8 @@ export default class MentorInfo extends Vue {
 .mc-mentor-info {
   padding: 32px 0px;
 }
+
+.mc-mentor-info * {
+  box-sizing: content-box;
+}
 </style>

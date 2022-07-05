@@ -73,6 +73,10 @@ export default class Modal extends Vue {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
 }
+
+.mc-mentor-modal-box * {
+  box-sizing: content-box;
+}
 </style>
 
 <style lang="stylus" scoped>

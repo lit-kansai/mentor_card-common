@@ -61,6 +61,10 @@ export default class MentorModal extends Vue {
 .mc-mentor-modal .mc-modal {
   top: 14%;
 }
+
+.mc-mentor-modal * {
+  box-sizing: content-box;
+}
 </style>
 
 <style lang="stylus" scoped>
