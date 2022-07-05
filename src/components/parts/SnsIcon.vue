@@ -1,7 +1,7 @@
 <template>
   <div class="mc-sns">
     <a :href="getAccountUrl" target="_blank">
-      <img :src="require(`@/assets/sns/${getSns}.svg`)" />
+      <img :src="require(`@/assets/sns/${getSns}.png`)" />
     </a>
   </div>
 </template>

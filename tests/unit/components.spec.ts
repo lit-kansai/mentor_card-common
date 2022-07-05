@@ -127,7 +127,7 @@ describe('Prefecture.vue', () => {
     const wrapper = shallowMount(Prefecture, {
       propsData: { pref }
     });
-    expect(wrapper.find('img').attributes().src).toMatch(`/pref/${pref}.svg`);
+    expect(wrapper.find('img').attributes().src).toMatch(`/pref/${pref}.png`);
     expect(wrapper.text()).toMatch('大阪府');
   });
   it('都道府県が存在しない時', () => {
@@ -159,6 +159,6 @@ describe('SnsIcon.vue', () => {
     expect(wrapper.find('a').attributes().href).toMatch(
       'https://twitter.com/lit_mizu'
     );
-    expect(wrapper.find('img').attributes().src).toMatch('/sns/twitter.svg');
+    expect(wrapper.find('img').attributes().src).toMatch('/sns/twitter.png');
   });
 });

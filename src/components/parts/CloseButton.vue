@@ -42,7 +42,9 @@ export default class Modal extends Vue {
   left: 0px;
   z-index: 10;
   transition: all 0.15s ease-in-out;
-  background-image: url('~@/assets/close.svg');
+  background-image: url('~@/assets/close.png');
+  background-position: center;
+  background-size: cover;
 }
 
 .mc-close_button-shadow {

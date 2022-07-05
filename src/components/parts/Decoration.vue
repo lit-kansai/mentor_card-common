@@ -1,7 +1,7 @@
 <template>
   <div class="mc-decos">
     <img
-      :src="require(`@/assets/decoration/${name[(r + i) % name.length]}.svg`)"
+      :src="require(`@/assets/decoration/${name[(r + i) % name.length]}.png`)"
       class="mc-deco"
       v-for="(_, i) in new Array(c)"
       :key="i"
