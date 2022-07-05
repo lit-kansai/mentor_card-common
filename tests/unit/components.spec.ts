@@ -51,7 +51,7 @@ describe('CloseButton.vue', () => {
       const wrapper = shallowMount(CloseButton, {
         propsData: { variant }
       });
-      const style = wrapper.find('.close_button-body').attributes().style;
+      const style = wrapper.find('.mc-close_button-body').attributes().style;
       const c = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(color) || [];
       expect(style).toMatch(
         `background-color: rgb(${parseInt(c[1], 16)}, ${parseInt(
