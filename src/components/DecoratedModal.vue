@@ -155,7 +155,7 @@ export default class DecoratedModal extends Vue {
 
   &::after {
     content: '';
-    background: url('/shadow.png');
+    background: url('~@/assets/shadow.png');
     background-repeat: repeat;
     position: absolute;
     top: 6px;

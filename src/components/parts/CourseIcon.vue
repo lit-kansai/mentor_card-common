@@ -1,16 +1,16 @@
 <template>
   <div class="mc-course_icon">
-    <img :src="require(`@/assets/course/${getCourse}.png`)" />
+    <img :src="courseIcon" />
   </div>
 </template>
 
 <script>
 export default {
   props: ['course'],
-  computed: {
-    getCourse() {
-      return this.course;
-    }
+  data() {
+    return {
+      courseIcon: require(`@/assets/course/${this.course}.png`)
+    };
   }
 };
 </script>
