@@ -2,6 +2,7 @@ import Vue from 'vue';
 import DecoratedModal from './components/DecoratedModal.vue';
 import MentorInfo from './components/MentorInfo.vue';
 import MentorModal from './components/MentorModal.vue';
+import MentorInfoUi from './components/MentorInfoUi.vue';
 import Modal from './components/Modal.vue';
 
 function install(vue: typeof Vue) {
@@ -9,7 +10,8 @@ function install(vue: typeof Vue) {
     MentorInfo,
     Modal,
     DecoratedModal,
-    MentorModal
+    MentorModal,
+    MentorInfoUi
   };
   for (const [name, c] of Object.entries(components)) {
     vue.component(name, c);
@@ -39,4 +41,11 @@ function getCardColor(color?: string): string {
 }
 
 export default { install };
-export { MentorInfo, Modal, DecoratedModal, MentorModal, getCardColor };
+export {
+  MentorInfo,
+  Modal,
+  DecoratedModal,
+  MentorModal,
+  MentorInfoUi,
+  getCardColor
+};
